@@ -1,0 +1,40 @@
+HTTP/1.1 200
+Content-Type: application/json; charset=utf-8
+
+{
+  "count": 3,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+    "url": "https://recette.ethikdo.co/api/v1/sales/113/",
+    "transaction_id": "3",
+    "customer_email": null,
+    "card_number": "1234123412341234",
+    "amount_purchased": 0,
+    "amount_debited": 2000,
+    "cancelled": false,
+    "date": "2020-02-27T09:47:24.711443Z"
+    },
+    {
+    "url": "https://recette.ethikdo.co/api/v1/sales/112/",
+    "transaction_id": "2",
+    "customer_email": null,
+    "card_number": "1234123412341234",
+    "amount_purchased": 0,
+    "amount_debited": 2000,
+    "cancelled": false,
+    "date": "2020-02-27T09:25:21.702039Z"
+    },
+    {
+    "url": "https://recette.ethikdo.co/api/v1/sales/111/",
+    "transaction_id": "1",
+    "customer_email": null,
+    "card_number": "1234123412341234",
+    "amount_purchased": 0,
+    "amount_debited": 2000,
+    "cancelled": true,
+    "date": "2020-02-27T09:18:40.351488Z"
+    }
+  ]
+}

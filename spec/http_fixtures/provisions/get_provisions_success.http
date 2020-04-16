@@ -1,0 +1,26 @@
+HTTP/1.1 200
+Content-Type: application/json; charset=utf-8
+
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+    "url": "https://recette.ethikdo.co/api/v1/provisions/2faac91c-ffec-4329-b851-8695020faeee/",
+    "capture_token": "2faac91c-ffec-4329-b851-8695020faeee",
+    "card_number": "1234123412341234",
+    "card_value": 500000,
+    "date_created": "2020-02-27T12:30:58.760332+01:00",
+    "date_used": null
+    },
+    {
+    "url": "https://recette.ethikdo.co/api/v1/provisions/f93f0deb-1bdf-4c40-a19f-8bacf831f529/",
+    "capture_token": "f93f0deb-1bdf-4c40-a19f-8bacf831f529",
+    "card_number": "1234123412341234",
+    "card_value": 496000,
+    "date_created": "2020-02-27T11:06:34.285773+01:00",
+    "date_used": null
+    }
+  ]
+}

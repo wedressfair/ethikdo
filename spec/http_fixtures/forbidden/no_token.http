@@ -1,0 +1,8 @@
+HTTP 403 Forbidden
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+{
+    "detail": "Informations d'authentification non fournies."
+}

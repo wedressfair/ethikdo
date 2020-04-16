@@ -1,0 +1,13 @@
+HTTP/1.1 200
+Content-Type: application/json; charset=utf-8
+
+{
+  "url": "https://recette.ethikdo.co/api/v1/sales/1/",
+  "transaction_id": "1",
+  "customer_email": null,
+  "card_number": "1010101010101010",
+  "amount_purchased": 1000,
+  "amount_debited": 1000,
+  "cancelled": false,
+  "date": "2020-02-27T11:38:19.684349Z"
+}
