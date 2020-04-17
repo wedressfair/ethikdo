@@ -85,7 +85,8 @@ transaction = Ethikdo::Transaction.create(
     capture_token: capture_token,
     amount_requested: order.total_price_cents,
     amount_purchased: order.total_price_cents,
-    transaction_id: order.id
+    transaction_id: order.id,
+    customer_email: nil
 )
 ```
 
