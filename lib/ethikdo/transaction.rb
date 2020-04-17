@@ -15,13 +15,15 @@ module Ethikdo
     attr_accessor :next
     attr_accessor :previous
     attr_accessor :results
+    attr_accessor :customer_email
 
-    def self.create(capture_token:, amount_requested:, amount_purchased: 0, transaction_id:)
+    def self.create(capture_token:, amount_requested:, amount_purchased: 0, transaction_id:, customer_email: nil)
       response = execute('post', '/sales/', body: {
                             capture_token: capture_token,
                             amount_requested: amount_requested,
                             amount_purchased: amount_purchased,
-                            transaction_id: transaction_id
+                            transaction_id: transaction_id,
+                            customer_email: customer_email
                           })
       self.new(response.parsed_response)
     end
