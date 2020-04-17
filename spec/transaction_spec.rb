@@ -29,7 +29,7 @@ describe Ethikdo::Transaction do
     end
 
     it 'builds the correct request' do
-      Ethikdo::Transaction.create(capture_token: 'foo', amount_requested: 10000, amount_purchased: 10000, transaction_id: 1)
+      Ethikdo::Transaction.create(capture_token: 'foo', amount_requested: 10000, amount_purchased: 10000, transaction_id: 1, customer_email: 'foo@bar.com')
 
       expect(WebMock).to have_requested(
         :post,
@@ -41,7 +41,8 @@ describe Ethikdo::Transaction do
           'capture_token' => 'foo',
           'amount_requested' => '10000',
           'amount_purchased' => '10000',
-          'transaction_id' => '1'
+          'transaction_id' => '1',
+          'customer_email' => 'foo@bar.com'
       })
     end
 
