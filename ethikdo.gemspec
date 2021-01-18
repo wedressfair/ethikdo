@@ -27,5 +27,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '~> 12'
   s.add_development_dependency 'webmock', '~> 3'
   s.add_development_dependency 'generator_spec', '~> 0.9'
-  s.add_runtime_dependency 'httparty', '~> 0.16.2'
+  s.add_runtime_dependency 'httparty', '>= 0.16.2', '< 0.19.0'
 end
