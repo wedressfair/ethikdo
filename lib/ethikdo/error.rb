@@ -1,4 +1,4 @@
-require 'net/http'
+require "net/http"
 
 module Ethikdo
   class Error < StandardError
@@ -17,7 +17,7 @@ module Ethikdo
       Net::ReadTimeout,
       SocketError,
       Zlib::GzipFile::Error,
-      OpenSSL::SSL::SSLError
+      OpenSSL::SSL::SSLError,
     ]
 
     attr_reader :http_response
@@ -34,7 +34,7 @@ module Ethikdo
     private
 
     def build_error_message
-      return nil if http_response.nil?
+      return nil if http_response.body.nil?
 
       message = "#{http_request_method} "
       message << "#{http_request.path} : "
@@ -44,13 +44,13 @@ module Ethikdo
     end
 
     def http_request_method
-      http_request.http_method.name.split('::').last.upcase
+      http_request.http_method.name.split("::").last.upcase
     end
 
     def response_message
-      content_type = http_response.headers['Content-Type']
-      if content_type && content_type.start_with?('application/json')
-        http_response.parsed_response['message'] || http_response.parsed_response['detail']
+      content_type = http_response.headers["Content-Type"]
+      if content_type && content_type.start_with?("application/json")
+        http_response.parsed_response["message"] || http_response.parsed_response["detail"]
       else
         net_http_response = http_response.response
         "#{net_http_response.code} #{net_http_response.message}"
