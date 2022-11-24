@@ -34,7 +34,7 @@ module Ethikdo
     private
 
     def build_error_message
-      return nil if http_response.body.nil?
+      return nil if http_response&.body.nil?
 
       message = "#{http_request_method} "
       message << "#{http_request.path} : "
