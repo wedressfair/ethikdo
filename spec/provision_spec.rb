@@ -34,13 +34,17 @@ describe Ethikdo::Provision do
       expect(WebMock).to have_requested(
         :post,
         'https://www.ethikdo.co/api/v1/provisions/'
-      ).with(headers: {
-        'Accept' => 'application/json',
-        'Authorization' => '1234',
-        }, body: {
-          'card_number' => '1234123412341234',
-          'card_crypto' => '123'
-      })
+      ).with(
+        headers: {
+          'Accept' => 'application/json',
+          'Authorization' => '1234',
+          'Content-Type' => 'application/json',
+        },
+        body: {
+          card_number: '1234123412341234',
+          card_crypto: '123'
+        }.to_json
+      )
     end
 
     it 'returns the correct response' do

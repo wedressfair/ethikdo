@@ -19,12 +19,12 @@ module Ethikdo
 
     def self.create(capture_token:, amount_requested:, amount_purchased: 0, transaction_id:, customer_email: nil)
       response = execute('post', '/sales/', body: {
-                            capture_token: capture_token,
-                            amount_requested: amount_requested,
-                            amount_purchased: amount_purchased,
-                            transaction_id: transaction_id,
-                            customer_email: customer_email
-                          })
+        capture_token: capture_token,
+        amount_requested: amount_requested.to_s,
+        amount_purchased: amount_purchased.to_s,
+        transaction_id: transaction_id.to_s,
+        customer_email: customer_email
+      }.to_json)
       self.new(response.parsed_response)
     end
 

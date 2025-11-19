@@ -54,10 +54,10 @@ module Ethikdo
 
     def self.base_options
       {
-        format: :json,
         headers: {
           'Accept' => 'application/json',
-          'Authorization' => api_key
+          'Authorization' => api_key,
+          'Content-Type' => 'application/json'
         }
       }
     end

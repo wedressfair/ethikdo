@@ -17,7 +17,7 @@ module Ethikdo
     attr_accessor :results
 
     def self.create(card_number:, card_crypto:)
-      response = execute("post", '/provisions/', body: { card_number: card_number, card_crypto: card_crypto })
+      response = execute("post", '/provisions/', body: { card_number: card_number.to_s, card_crypto: card_crypto.to_s }.to_json)
       self.new(response.parsed_response)
     end
 

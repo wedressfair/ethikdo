@@ -34,16 +34,19 @@ describe Ethikdo::Transaction do
       expect(WebMock).to have_requested(
         :post,
         'https://www.ethikdo.co/api/v1/sales/'
-      ).with(headers: {
-        'Accept' => 'application/json',
-        'Authorization' => '1234',
-        }, body: {
+      ).with(
+        headers: {
+          'Accept' => 'application/json',
+          'Authorization' => '1234',
+        },
+        body: {
           'capture_token' => 'foo',
           'amount_requested' => '10000',
           'amount_purchased' => '10000',
           'transaction_id' => '1',
           'customer_email' => 'foo@bar.com'
-      })
+        }.to_json
+      )
     end
 
     it 'returns the correct response' do
